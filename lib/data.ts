@@ -533,6 +533,46 @@ export const industries = [
       "Customer inquiry chatbot",
     ],
   },
+  {
+    slug: "others",
+    title: "Others",
+    subNiches: [
+      "Construction",
+      "Events",
+      "Travel",
+      "Nonprofits",
+      "Creators",
+      "Influencers",
+      "Local Businesses",
+      "Franchises",
+      "Car Rentals",
+      "Studios",
+    ],
+    painPoints: [
+      "Too much repetitive admin work every day",
+      "Customers wait too long for replies",
+      "Leads are missed outside working hours",
+      "Staff spends hours updating spreadsheets manually",
+      "Bookings and inquiries are difficult to manage",
+      "Business growth slows because operations are manual",
+    ],
+    solutions: [
+      "AI replies instantly to customer questions 24/7",
+      "Automatically organize inquiries, bookings and leads in one place",
+      "Send reminders and follow-ups without manual work",
+      "Reduce repetitive admin tasks that waste staff time",
+      "Connect all your apps and systems together automatically",
+      "Save hours every week by automating repetitive tasks",
+    ],
+    automations: [
+      "WhatsApp and website chatbots",
+      "Automatic booking and reminder systems",
+      "Lead collection and follow-up workflows",
+      "Custom business dashboards",
+      "Spreadsheet and admin task automation",
+      "App integrations and workflow automations",
+    ],
+  },
 ];
 
 export const pricing = [

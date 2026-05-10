@@ -20,22 +20,22 @@ export default function Hero() {
         </div>
 
         {/* Circular photo */}
-        <div className="shrink-0 rounded-full overflow-hidden mt-1 w-28 h-28 sm:w-36 sm:h-36 lg:w-48 lg:h-48">
+        {/* <div className="shrink-0 rounded-full overflow-hidden mt-1 w-28 h-28 sm:w-36 sm:h-36 lg:w-52 lg:h-52">
           <Image
             src="/profile.png"
             alt="Maryam Zamoog"
-            width={190}
-            height={190}
+            width={50}
+            height={50}
             className="w-full h-full object-cover"
             priority
           />
-        </div>
+        </div> */}
       </div>
 
       {/* Spacer */}
       <div className="flex-1" />
 
-      <div className="flex items-end justify-between gap-8 border m-4">
+      <div className="flex items-end justify-between gap-8 m-4">
         <a
           href={`mailto:${email}`}
           className="border p-4 select-text inline-flex items-center gap-2 shrink-0 text-xl md:text-2xl text-black hover:text-black/60 transition-colors"

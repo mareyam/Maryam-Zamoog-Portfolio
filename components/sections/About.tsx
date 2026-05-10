@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section id="about" className="bg-white px-6 pt-10 pb-24 sm:px-10">
       <div>
-        <p className="p-4 text-2xl font-bold tracking-tight text-black border-b border-black">
+        <p className="p-4 text-4xl font-bold tracking-tight text-black border-b border-black">
           Select your business type
         </p>
 
@@ -18,7 +18,7 @@ export default function About() {
               href={`/industries/${toSlug(industry.title)}`}
               className="border border-black px-5 py-8 text-left transition-all duration-150 bg-white text-black hover:bg-black hover:text-white"
             >
-              <h3 className="text-xl md:text-2xl font-medium leading-tight">
+              <h3 className="text-xl md:text-xl font-medium leading-tight">
                 {industry.title}
               </h3>
             </Link>
