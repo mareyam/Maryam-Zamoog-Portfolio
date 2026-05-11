@@ -5,10 +5,14 @@ export default function Work() {
         <h2 className="text-lg sm:text-2xl font-bold leading-snug sm:leading-tight text-black">
           We help founders use AI products without technical knowledge.
           <br />
+          AI can be used for handling
+          <br />
           <br />
           <span className="font-normal block space-y-2 text-base sm:text-2xl">
             <span className="block">1. customer queries</span>
-            <span className="block">2. receiving calls after work hours</span>
+            <span className="block">
+              2. receiving calls after work hours/taking orders
+            </span>
             <span className="block">3. handling admin tasks</span>
             <span className="block">4. calculating estimates</span>
             <span className="block">5. managing your CRM</span>
@@ -22,7 +26,7 @@ export default function Work() {
             </span>
           </span>
           <br />
-          If your use case is not mentioned above?
+          Is your usecase not mentioned above?
           <br />
           <br />
           <a

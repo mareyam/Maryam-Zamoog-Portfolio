@@ -618,8 +618,14 @@ export const useCases = [
   {
     slug: "lead-generation",
     title: "Lead Generation",
-    tagline: "Get new customers automatically",
-    tools: ["Clay", "Apollo", "LinkedIn", "Email"],
+    link: [
+      "https://www.loom.com/share/dcba7ae9077b437cb0366df6ccebe5b6",
+      "https://www.loom.com/share/81722e64bf494bbd8dfcd8f6c8307bdb",
+      "https://www.loom.com/share/622469d897f947768d8f48b7b7ca4d9b",
+      "https://www.loom.com/share/6b54192117e9427ebaf6df5f46baf642",
+    ],
+    tagline: "Get new customers automatically using Tech",
+    tools: ["Clay", "Apollo", "LinkedIn", "Email", "Apify"],
     overview:
       "We help you find and reach out to potential customers automatically, so you always have new leads coming in.",
     painPoints: [
@@ -700,6 +706,9 @@ export const useCases = [
     slug: "review-reputation",
     title: "Review & Reputation",
     tagline: "Get more positive reviews",
+    link: [
+      "https://www.loom.com/share/64afcaf57db04a6bb5f5d4b1fa2d2be6",
+    ],
     tools: ["SMS", "WhatsApp", "Google", "Trustpilot"],
     overview:
       "We help you collect more good reviews from happy customers automatically.",
@@ -724,37 +733,15 @@ export const useCases = [
   },
 
   {
-    slug: "onboarding",
-    title: "Client Onboarding",
-    tagline: "Make onboarding simple",
-    tools: ["Email", "Notion", "Zapier", "Slack"],
-    overview:
-      "We automate the onboarding process so new clients get everything they need without delays.",
-    painPoints: [
-      "Onboarding feels disorganized",
-      "Clients forget to send information",
-      "Too much repetitive admin work",
-      "New clients feel confused",
-    ],
-    workflow: [
-      "The onboarding starts automatically after payment",
-      "Clients receive welcome emails and next steps",
-      "Forms and documents are collected automatically",
-      "Your team gets notified instantly",
-    ],
-    results: [
-      "A smoother client experience",
-      "Less admin work",
-      "Faster project start times",
-      "More organized workflows",
-    ],
-  },
-
-  {
     slug: "content-posting",
     title: "Content & Social Posting",
-    tagline: "Stay active online automatically",
-    tools: ["Make", "Buffer", "OpenAI", "Airtable"],
+    tagline:
+      "Stay active online automatically, create content without doing anything yourself",
+    link: [
+      "https://www.loom.com/share/891cfefe5b764c33a877b172ae765983",
+      "https://www.loom.com/share/f46e315cf85b4c02a9f46ea0eca250ce",
+    ],
+    tools: ["AI", "Buffer", "OpenAI", "Google Sheets"],
     overview:
       "AI helps create and schedule social media content so your business stays active online consistently.",
     painPoints: [
