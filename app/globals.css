@@ -26,3 +26,12 @@ body {
   background: rgba(0, 0, 0, 0.15);
   border-radius: 2px;
 }
+
+@keyframes textPulse {
+  0%, 100% { color: rgb(255, 255, 255); }
+  50%       { color: rgb(160, 160, 160); }
+}
+
+.animate-text-pulse {
+  animation: textPulse 2.5s ease-in-out infinite;
+}

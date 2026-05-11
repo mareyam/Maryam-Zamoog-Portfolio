@@ -13,12 +13,12 @@ export default function ContactPage() {
             Contact
           </p>
           <h1 className="mt-4 text-6xl sm:text-2xl md:text-4xl lg:text-6xl font-black leading-none tracking-tighter uppercase">
-            Let’s Solve
+            Lets Solve
           </h1>
           <p className="mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-black/60">
-            Tell me about your business, the niche, the problems you&apos;re facing,
-            anything you think could save your time? or just leave it to us.
-            Fill in whatever detail you think could help me understand. Will
+            Tell me about your business, the niche, the problems you&apos;re
+            facing, anything you think could save your time? or just leave it to
+            us. Fill in whatever detail you think could help me understand. Will
             reach out to you within 4 hours.
           </p>
 
@@ -103,6 +103,23 @@ export default function ContactPage() {
             >
               Send Inquiry →
             </button>
+            <div className="flex flex-col">
+              <a
+                href="mailto:maryam@zamoog.com"
+                className="w-full border border-black bg-black px-6 py-7 text-center text-2xl md:text-3xl font-black tracking-tight uppercase text-white transition-all duration-200 hover:bg-white hover:text-black"
+              >
+                OR Reach Out Via Email →
+              </a>
+
+              <a
+                href="https://calendly.com/maryamnaveed/new-meeting"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full border border-black bg-black px-6 py-7 text-center text-2xl md:text-3xl font-black tracking-tight uppercase text-white transition-all duration-200 hover:bg-white hover:text-black"
+              >
+                OR Reach Out Via Meeting →
+              </a>
+            </div>
           </form>
         </div>
       </main>

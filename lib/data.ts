@@ -57,9 +57,11 @@ export const projects = [
 ];
 
 export const socials = [
-  { label: "Linkedin", href: "https://linkedin.com" },
-  { label: "Twitter", href: "https://twitter.com" },
-  { label: "Behance", href: "https://behance.net" },
+  { label: "Linkedin", href: "www.linkedin.com/in/maryam-naveed-zamoog-n8n" },
+  {
+    label: "Upwork",
+    href: "https://www.upwork.com/freelancers/~01e1760bd58725f035",
+  },
 ];
 
 export const email = "maryam@zamoog.com";

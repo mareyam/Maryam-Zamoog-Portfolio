@@ -7,14 +7,14 @@ export default function Footer() {
         <div className="flex flex-col gap-6 text-xs text-white/40 sm:flex-row sm:items-start sm:justify-between">
           {/* Phone + email */}
           <div className="flex flex-col gap-1">
-            <span>+92 300 000 0000</span>
+            <span>+92 322 0140611</span>
             <span>maryam@zamoog.com</span>
           </div>
 
           {/* Credit */}
           <div className="flex flex-col gap-1">
             <span>Designed &amp; Developed</span>
-            <span>by Maryam Zamoog</span>
+            <span>by Zamoog</span>
           </div>
 
           {/* Socials */}
