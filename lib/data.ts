@@ -1,61 +1,3 @@
-export const projects = [
-  {
-    id: 1,
-    title: "Stone Mind",
-    category: "AI Automation",
-    description:
-      "An intelligent workflow automation system that transforms repetitive business processes into seamless, self-running pipelines.",
-    year: "2024",
-    tags: ["AI", "Automation", "Python"],
-    image: "/project-1.svg",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Violet Orbit",
-    category: "Web Development",
-    description:
-      "A modern SaaS dashboard built for real-time data visualization and team collaboration at scale.",
-    year: "2024",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
-    image: "/project-2.svg",
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Pulse CRM",
-    category: "Full Stack",
-    description:
-      "A lightweight CRM system with AI-powered lead scoring and automated follow-up sequences.",
-    year: "2023",
-    tags: ["React", "Node.js", "OpenAI"],
-    image: "/project-3.svg",
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Echo Bot",
-    category: "AI Automation",
-    description:
-      "A conversational AI assistant integrated across Slack, WhatsApp, and email for unified team communication.",
-    year: "2023",
-    tags: ["LLM", "Bots", "API Integration"],
-    image: "/project-4.svg",
-    featured: true,
-  },
-  {
-    id: 5,
-    title: "Flux Analytics",
-    category: "Data",
-    description:
-      "A real-time analytics pipeline that ingests, processes, and surfaces actionable insights from raw event streams.",
-    year: "2023",
-    tags: ["Python", "Data", "Dashboard"],
-    image: "/project-3.svg",
-    featured: false,
-  },
-];
-
 export const socials = [
   { label: "Linkedin", href: "www.linkedin.com/in/maryam-naveed-zamoog-n8n" },
   {
@@ -669,6 +611,224 @@ export const pricing = [
     desc: "Landing Pages, Funnels, SaaS.",
     advantage:
       "Your AI Builder apps isn&apos;t going to build a SaaS for you, trust me.",
+  },
+];
+
+export const useCases = [
+  {
+    slug: "lead-generation",
+    title: "Lead Generation",
+    tagline: "Get new customers automatically",
+    tools: ["Clay", "Apollo", "LinkedIn", "Email"],
+    overview:
+      "We help you find and reach out to potential customers automatically, so you always have new leads coming in.",
+    painPoints: [
+      "Finding leads manually takes too much time",
+      "Following up with people is inconsistent",
+      "Potential customers stop replying",
+      "You need more leads without hiring more staff",
+    ],
+    workflow: [
+      "We find the right people for your business automatically",
+      "AI gathers useful details about each lead",
+      "Personalized emails are sent for you",
+      "Interested leads are sent directly to your inbox or CRM",
+    ],
+    results: [
+      "More leads without extra employees",
+      "Better reply rates from personalized messages",
+      "Less time wasted on cold leads",
+      "A steady flow of potential customers",
+    ],
+  },
+
+  {
+    slug: "customer-support",
+    title: "Customer Support",
+    tagline: "Reply to customers 24/7",
+    tools: ["WhatsApp", "Website Chat", "Email", "Voicebot"],
+    overview:
+      "AI replies to customer questions, handles common issues, and supports your customers even when you're offline.",
+    painPoints: [
+      "Too many customer messages to manage",
+      "Repeating the same answers every day",
+      "Customers message after work hours",
+      "Slow replies frustrate customers",
+    ],
+    workflow: [
+      "AI learns about your business and services",
+      "Customer messages are answered instantly",
+      "Important issues are passed to your team",
+      "All conversations are saved automatically",
+    ],
+    results: [
+      "Faster customer support",
+      "Less pressure on your team",
+      "Customers get replies anytime",
+      "Fewer missed messages and complaints",
+    ],
+  },
+
+  {
+    slug: "appointment-booking",
+    title: "Appointment Booking",
+    tagline: "Let AI handle bookings",
+    tools: ["WhatsApp", "SMS", "Calendly", "GHL"],
+    overview:
+      "We automate your booking process so customers can book appointments without endless back-and-forth messages.",
+    painPoints: [
+      "Booking appointments takes too long",
+      "People forget appointments",
+      "Leads stop replying while waiting",
+      "Scheduling feels messy and manual",
+    ],
+    workflow: [
+      "Customer shows interest through a form or message",
+      "AI asks a few questions automatically",
+      "Meetings are booked instantly",
+      "Automatic reminders are sent before the appointment",
+    ],
+    results: [
+      "More booked calls and meetings",
+      "Fewer no-shows",
+      "Faster response time",
+      "Less manual scheduling work",
+    ],
+  },
+
+  {
+    slug: "review-reputation",
+    title: "Review & Reputation",
+    tagline: "Get more positive reviews",
+    tools: ["SMS", "WhatsApp", "Google", "Trustpilot"],
+    overview:
+      "We help you collect more good reviews from happy customers automatically.",
+    painPoints: [
+      "Customers forget to leave reviews",
+      "Asking manually takes too much effort",
+      "Bad reviews hurt your reputation",
+      "Competitors have stronger online presence",
+    ],
+    workflow: [
+      "Customers receive review requests automatically",
+      "Happy customers are guided to leave reviews",
+      "Negative feedback is handled privately",
+      "Your team gets notified when needed",
+    ],
+    results: [
+      "More positive reviews",
+      "Better online reputation",
+      "Higher trust from new customers",
+      "Improved visibility on Google",
+    ],
+  },
+
+  {
+    slug: "onboarding",
+    title: "Client Onboarding",
+    tagline: "Make onboarding simple",
+    tools: ["Email", "Notion", "Zapier", "Slack"],
+    overview:
+      "We automate the onboarding process so new clients get everything they need without delays.",
+    painPoints: [
+      "Onboarding feels disorganized",
+      "Clients forget to send information",
+      "Too much repetitive admin work",
+      "New clients feel confused",
+    ],
+    workflow: [
+      "The onboarding starts automatically after payment",
+      "Clients receive welcome emails and next steps",
+      "Forms and documents are collected automatically",
+      "Your team gets notified instantly",
+    ],
+    results: [
+      "A smoother client experience",
+      "Less admin work",
+      "Faster project start times",
+      "More organized workflows",
+    ],
+  },
+
+  {
+    slug: "content-posting",
+    title: "Content & Social Posting",
+    tagline: "Stay active online automatically",
+    tools: ["Make", "Buffer", "OpenAI", "Airtable"],
+    overview:
+      "AI helps create and schedule social media content so your business stays active online consistently.",
+    painPoints: [
+      "Posting content takes too much time",
+      "Running out of content ideas",
+      "Social pages become inactive",
+      "Creating posts manually every day is exhausting",
+    ],
+    workflow: [
+      "AI creates content ideas for your business",
+      "Posts and captions are written automatically",
+      "You review and approve content if needed",
+      "Posts are scheduled across your platforms",
+    ],
+    results: [
+      "Consistent social media presence",
+      "Less time spent creating content",
+      "More visibility online",
+      "Better engagement with your audience",
+    ],
+  },
+
+  {
+    slug: "invoice-payments",
+    title: "Invoicing & Payments",
+    tagline: "Get paid on time",
+    tools: ["Stripe", "QuickBooks", "Email", "SMS"],
+    overview:
+      "We automate invoices and payment reminders so you spend less time chasing payments.",
+    painPoints: [
+      "Clients forget to pay invoices",
+      "Following up feels awkward",
+      "Billing takes too much time",
+      "Cash flow becomes inconsistent",
+    ],
+    workflow: [
+      "Invoices are sent automatically",
+      "Payment reminders are scheduled for you",
+      "Customers can pay instantly online",
+      "Payments are tracked automatically",
+    ],
+    results: [
+      "Faster payments",
+      "Less awkward follow-ups",
+      "Better cash flow",
+      "Less admin work every month",
+    ],
+  },
+
+  {
+    slug: "crm-pipeline",
+    title: "CRM & Pipeline Automation",
+    tagline: "Keep your business organized",
+    tools: ["HubSpot", "GHL", "Notion", "Zapier"],
+    overview:
+      "We automate your CRM so customer information, follow-ups, and sales pipelines stay updated automatically.",
+    painPoints: [
+      "Your CRM is never updated properly",
+      "Leads get forgotten",
+      "Too much manual admin work",
+      "Tracking sales feels messy",
+    ],
+    workflow: [
+      "Emails, calls, and meetings are logged automatically",
+      "Lead stages update automatically",
+      "Follow-up reminders are created for your team",
+      "Reports are generated automatically",
+    ],
+    results: [
+      "A cleaner and more organized CRM",
+      "Fewer missed opportunities",
+      "More time for actual sales",
+      "Clear visibility into your business",
+    ],
   },
 ];
 

@@ -24,21 +24,28 @@ export default function Header() {
           <nav className="flex items-center text-sm text-black">
             <Link
               href={workLink}
-              className="border border-black px-4 py-2 hover:bg-black hover:text-white transition"
+              className="border border-black px-2 py-2 hover:bg-black hover:text-white transition"
             >
               Work
             </Link>
 
             <Link
               href={aboutLink}
-              className="border border-black px-4 py-2 hover:bg-black hover:text-white transition"
+              className="border border-black px-2 py-2 hover:bg-black hover:text-white transition"
             >
               About
             </Link>
 
             <Link
+              href="/usecases"
+              className="border border-black px-2 py-2 hover:bg-black hover:text-white transition"
+            >
+              Use Cases
+            </Link>
+
+            <Link
               href="/contact"
-              className="border border-black px-4 py-2 hover:bg-black hover:text-white transition"
+              className="border border-black px-2 py-2 hover:bg-black hover:text-white transition"
             >
               Contact
             </Link>
