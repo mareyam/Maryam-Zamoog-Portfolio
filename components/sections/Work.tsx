@@ -22,7 +22,8 @@ export default function Work() {
               8. connecting apps and your team together
             </span>
             <span className="block">
-              9. booking appointments and qualifying leads
+              9. business cold outreach, find potential leads and booking
+              appointments
             </span>
           </span>
           <br />
