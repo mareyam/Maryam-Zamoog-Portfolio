@@ -1,4 +1,4 @@
-import { socials } from "@/lib/data";
+import { socials, email, emailAli } from "@/lib/data";
 
 export default function Footer() {
   return (
@@ -8,7 +8,8 @@ export default function Footer() {
           {/* Phone + email */}
           <div className="flex flex-col gap-1">
             <span>+92 322 0140611</span>
-            <span>maryam@zamoog.com</span>
+            <a href={`mailto:${email}`} className="transition-colors hover:text-white">{email}</a>
+            <a href={`mailto:${emailAli}`} className="transition-colors hover:text-white">{emailAli}</a>
           </div>
 
           {/* Credit */}

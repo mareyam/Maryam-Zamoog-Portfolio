@@ -1,12 +1,12 @@
 export const socials = [
-  { label: "Linkedin", href: "www.linkedin.com/in/maryam-naveed-zamoog-n8n" },
-  {
-    label: "Upwork",
-    href: "https://www.upwork.com/freelancers/~01e1760bd58725f035",
-  },
+  { label: "Maryam — LinkedIn", href: "https://www.linkedin.com/in/maryam-naveed-zamoog-n8n" },
+  { label: "Maryam — Upwork", href: "https://www.upwork.com/freelancers/~01e1760bd58725f035" },
+  { label: "Ali — LinkedIn", href: "https://www.linkedin.com/in/alizamankhanai/" },
+  { label: "Ali — Upwork", href: "https://www.upwork.com/freelancers/~01150fb0db7338a9a5" },
 ];
 
 export const email = "maryam@zamoog.com";
+export const emailAli = "ali@zamoog.com";
 
 export const industries = [
   {
