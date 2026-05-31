@@ -110,6 +110,60 @@ export default async function UseCasePage({
             </div>
           </div>
 
+          {useCase.doc && useCase.doc.length > 0 && (
+            <div className="mt-16 border-2 border-black p-8">
+              <p className="text-sm uppercase tracking-wide text-black font-extrabold mb-6">
+                Documentation
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {useCase.doc.map((url, idx) => {
+                  const previewUrl = url
+                    .replace(/\/edit(\?.*)?$/, "/preview")
+                    .replace(/\/view(\?.*)?$/, "/preview");
+                  return (
+                    <div key={idx} className="flex flex-col gap-2">
+                      <iframe
+                        src={previewUrl}
+                        className="w-full h-80 border border-black/20"
+                        allow="autoplay"
+                      />
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="self-start text-xs uppercase tracking-wide font-bold border border-black px-3 py-1.5 hover:bg-black hover:text-white transition-colors"
+                      >
+                        Open Doc {idx + 1} →
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {useCase.link && useCase.link.length > 0 && (
+            <div className="mt-16 border-2 border-black p-8">
+              <p className="text-sm uppercase tracking-wide text-black font-extrabold mb-6">
+                Watch it in action
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {useCase.link.map((url, idx) => {
+                  const id = url.split("/share/")[1]?.split("?")[0];
+                  return (
+                    <div key={idx} className="aspect-video w-full">
+                      <iframe
+                        src={`https://www.loom.com/embed/${id}`}
+                        allowFullScreen
+                        className="w-full h-full border border-black/20"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           <Link
             href="/contact"
             className="mt-16 flex items-center justify-between border-2 border-black bg-black text-white px-8 py-10 transition-all duration-200 hover:bg-white hover:text-black"

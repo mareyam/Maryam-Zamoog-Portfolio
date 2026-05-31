@@ -1,8 +1,20 @@
 export const socials = [
-  { label: "Maryam — LinkedIn", href: "https://www.linkedin.com/in/maryam-naveed-zamoog-n8n" },
-  { label: "Maryam — Upwork", href: "https://www.upwork.com/freelancers/~01e1760bd58725f035" },
-  { label: "Ali — LinkedIn", href: "https://www.linkedin.com/in/alizamankhanai/" },
-  { label: "Ali — Upwork", href: "https://www.upwork.com/freelancers/~01150fb0db7338a9a5" },
+  {
+    label: "Maryam — LinkedIn",
+    href: "https://www.linkedin.com/in/maryam-naveed-zamoog-n8n",
+  },
+  {
+    label: "Maryam — Upwork",
+    href: "https://www.upwork.com/freelancers/~01e1760bd58725f035",
+  },
+  {
+    label: "Ali — LinkedIn",
+    href: "https://www.linkedin.com/in/alizamankhanai/",
+  },
+  {
+    label: "Ali — Upwork",
+    href: "https://www.upwork.com/freelancers/~01150fb0db7338a9a5",
+  },
 ];
 
 export const email = "maryam@zamoog.com";
@@ -618,14 +630,18 @@ export const useCases = [
   {
     slug: "lead-generation",
     title: "Lead Generation",
+    tagline: "Get new customers automatically using Tech",
+    tools: ["Clay", "Apollo", "LinkedIn", "Email", "Apify"],
+    doc: [
+      "https://docs.google.com/document/d/180twzAts0eEOzAjfzVdMguUJeWyJeZJ9K6bxOMwTNVY/edit?tab=t.0",
+      "https://docs.google.com/document/d/14EImiuwSIUPWJJAgTuUGJadagInUZGMztR7KgpKYGrA/edit?tab=t.0",
+    ],
     link: [
       "https://www.loom.com/share/dcba7ae9077b437cb0366df6ccebe5b6",
       "https://www.loom.com/share/81722e64bf494bbd8dfcd8f6c8307bdb",
       "https://www.loom.com/share/622469d897f947768d8f48b7b7ca4d9b",
       "https://www.loom.com/share/6b54192117e9427ebaf6df5f46baf642",
     ],
-    tagline: "Get new customers automatically using Tech",
-    tools: ["Clay", "Apollo", "LinkedIn", "Email", "Apify"],
     overview:
       "We help you find and reach out to potential customers automatically, so you always have new leads coming in.",
     painPoints: [
@@ -653,6 +669,13 @@ export const useCases = [
     title: "Customer Support",
     tagline: "Reply to customers 24/7",
     tools: ["WhatsApp", "Website Chat", "Email", "Voicebot"],
+    doc: [
+      "https://docs.google.com/document/d/1zdXJmr-B4JYZzoKV3m9H1k03f_i4VhtlEV5nclm5bxU/edit?tab=t.0",
+    ],
+    link: [
+      "https://www.loom.com/share/445863931a2c4b87aee61805af02945f",
+      "https://www.loom.com/share/da5c9a1ba1514821a4925ea1a902638f",
+    ],
     overview:
       "AI replies to customer questions, handles common issues, and supports your customers even when you're offline.",
     painPoints: [
@@ -680,6 +703,10 @@ export const useCases = [
     title: "Appointment Booking",
     tagline: "Let AI handle bookings",
     tools: ["WhatsApp", "SMS", "Calendly", "GHL"],
+    doc: [
+      "https://docs.google.com/document/d/1zdXJmr-B4JYZzoKV3m9H1k03f_i4VhtlEV5nclm5bxU/edit?tab=t.0",
+    ],
+    link: ["https://www.loom.com/share/a9492ffe9016404a8c0a942680ad38f2"],
     overview:
       "We automate your booking process so customers can book appointments without endless back-and-forth messages.",
     painPoints: [
@@ -706,10 +733,9 @@ export const useCases = [
     slug: "review-reputation",
     title: "Review & Reputation",
     tagline: "Get more positive reviews",
-    link: [
-      "https://www.loom.com/share/64afcaf57db04a6bb5f5d4b1fa2d2be6",
-    ],
     tools: ["SMS", "WhatsApp", "Google", "Trustpilot"],
+    doc: [],
+    link: ["https://www.loom.com/share/64afcaf57db04a6bb5f5d4b1fa2d2be6"],
     overview:
       "We help you collect more good reviews from happy customers automatically.",
     painPoints: [
@@ -737,11 +763,15 @@ export const useCases = [
     title: "Content & Social Posting",
     tagline:
       "Stay active online automatically, create content without doing anything yourself",
+    tools: ["AI", "Buffer", "OpenAI", "Google Sheets"],
+    doc: [
+      "https://docs.google.com/document/d/17RQKnHKG1F31hwrorkp7PNqoPTSVAL70t0s0W3VGWAY/edit?tab=t.0",
+      "https://docs.google.com/document/d/1oKQw418Gor-djFNQ-AEyCwvxl1Jst1OZFBMWBA1PLfQ/edit?tab=t.0",
+    ],
     link: [
       "https://www.loom.com/share/891cfefe5b764c33a877b172ae765983",
       "https://www.loom.com/share/f46e315cf85b4c02a9f46ea0eca250ce",
     ],
-    tools: ["AI", "Buffer", "OpenAI", "Google Sheets"],
     overview:
       "AI helps create and schedule social media content so your business stays active online consistently.",
     painPoints: [
@@ -769,6 +799,8 @@ export const useCases = [
     title: "Invoicing & Payments",
     tagline: "Get paid on time",
     tools: ["Stripe", "QuickBooks", "Email", "SMS"],
+    doc: [],
+    link: [],
     overview:
       "We automate invoices and payment reminders so you spend less time chasing payments.",
     painPoints: [
@@ -796,6 +828,19 @@ export const useCases = [
     title: "CRM & Pipeline Automation",
     tagline: "Keep your business organized",
     tools: ["HubSpot", "GHL", "Notion", "Zapier"],
+    doc: [
+      "https://drive.google.com/file/d/1i6Kcm9pwn9HyWVjQie13Z8wR35u1eLnS/view?usp=drive_link",
+      "https://drive.google.com/file/d/1MXiGVoP--DnsyOTsluPNW-3gTFiz8bXK/view?usp=drive_link",
+      "https://drive.google.com/file/d/1NfNQ0LbIHVkjw9V83Y9DcBZYh6sWTHoO/view?usp=drive_link",
+      "https://drive.google.com/file/d/1AYfIUNVUjzaPz7uMiCLUPqFpk-dVRR0Q/view?usp=drive_link",
+      "https://drive.google.com/file/d/13Kizz6RlMfN-vP02PilfUbcNgfegBN1c/view?usp=drive_link",
+    ],
+    link: [
+      "https://www.loom.com/share/617cfb3852394588a1907002b6139ec0",
+      "https://www.loom.com/share/a9492ffe9016404a8c0a942680ad38f2",
+      "https://www.loom.com/share/1bc7a7598a0742ca9d03d145b06012be",
+      "https://www.loom.com/share/64afcaf57db04a6bb5f5d4b1fa2d2be6",
+    ],
     overview:
       "We automate your CRM so customer information, follow-ups, and sales pipelines stay updated automatically.",
     painPoints: [
