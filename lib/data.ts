@@ -3,14 +3,10 @@ export const socials = [
     label: "Maryam — LinkedIn",
     href: "https://www.linkedin.com/in/maryam-naveed-zamoog-n8n",
   },
-  {
-    label: "Ali — LinkedIn",
-    href: "https://www.linkedin.com/in/alizamankhanai/",
-  },
+
 ];
 
 export const email = "maryam@zamoog.com";
-export const emailAli = "ali@zamoog.com";
 
 export const industries = [
   {
