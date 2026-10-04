@@ -1,6 +1,6 @@
 "use client";
 
-import { email, emailAli } from "@/lib/data";
+import { email } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -27,13 +27,7 @@ export default function Hero() {
         >
           {email}
         </a>
-        <a
-          href={`mailto:${emailAli}`}
-          className="inline-block self-start border border-black px-4 py-4 text-sm sm:text-lg text-black transition hover:bg-black hover:text-white"
-        >
-          {emailAli}
-        </a>
-
+       
         <a
           href="https://tinyurl.com/maryamlooms"
           target="_blank"
