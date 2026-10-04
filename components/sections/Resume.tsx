@@ -179,9 +179,20 @@ export default function Resume() {
               <SectionIcon>👤</SectionIcon>
               <h2 className="text-sm font-bold tracking-widest text-gray-800">PROFILE</h2>
             </div>
-            <div className="ml-11 mt-2 border-t border-gray-200 pt-3 text-sm leading-relaxed text-gray-700">
-              A Software Engineer with 3 years of hands-on experience working with
-              Next.js/TypeScript/React and Python.
+            <div className="ml-11 mt-2 space-y-2 border-t border-gray-200 pt-3 text-sm leading-relaxed text-gray-700">
+              <p>
+                An AI Automation Engineer with 3 years of industry experience with JavaScript
+                and 1.5 years experience working with GoHighLevel, n8n, AI Agents, APIs, and
+                CRM automation.
+              </p>
+              <p>
+                Experienced in building end-to-end automation systems for lead generation,
+                sales, customer support, and business operations.
+              </p>
+              <p>
+                Skilled in integrating platforms like OpenAI, Vapi, Retell, Twilio, HubSpot,
+                Salesforce, Stripe, and third-party APIs.
+              </p>
             </div>
           </div>
 
