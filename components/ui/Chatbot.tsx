@@ -98,7 +98,7 @@ export default function Chatbot() {
           {/* Header */}
           <div className="flex items-center justify-between border-b-2 border-black bg-black px-4 py-3">
             <span className="text-xs font-black uppercase tracking-widest text-white">
-              Chat with Maryam &amp; Ali
+              Chat with Maryam
             </span>
             <button
               onClick={() => setOpen(false)}

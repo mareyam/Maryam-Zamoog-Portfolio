@@ -35,9 +35,9 @@ export default function Hero() {
         </a>
 
         <p className="w-full border border-black p-4 text-left leading-[1.35] text-black text-base sm:text-xl md:text-2xl">
-          Hello, we&apos;re Maryam &amp; Ali — freelance AI automation
-          developers and software engineers based in Pakistan, helping
-          businesses save time with AI, automations and custom systems.
+          Hello, I&apos;m Maryam — freelance AI automation developer and
+          software engineer based in Pakistan, helping businesses save time
+          with AI, automations and custom systems.
         </p>
       </div>
     </section>
