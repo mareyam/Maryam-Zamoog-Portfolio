@@ -70,15 +70,9 @@ const categories: { heading: string; tools: Tool[] }[] = [
     tools: [
       { name: "GoHighLevel", svg: <Badge bg="#00BF63" text="GHL" /> },
       { name: "HubSpot", img: "https://cdn.simpleicons.org/hubspot/FF7A59" },
-      {
-        name: "Salesforce",
-        img: "https://cdn.simpleicons.org/salesforce/00A1E0",
-      },
+      { name: "Salesforce", svg: <Badge bg="#00A1E0" text="SF" /> },
       { name: "Zoho CRM", img: "https://cdn.simpleicons.org/zoho/C8202B" },
-      {
-        name: "Monday CRM",
-        img: "https://cdn.simpleicons.org/mondaydotcom/FF3750",
-      },
+      { name: "Monday CRM", svg: <Badge bg="#FF3750" text="Monday" /> },
     ],
   },
   {
@@ -90,7 +84,7 @@ const categories: { heading: string; tools: Tool[] }[] = [
       { name: "Smartlead", svg: <Badge bg="#7C3AED" text="SmartLead" /> },
       { name: "Lemlist", svg: <Badge bg="#FF6B6B" text="lemlist" /> },
       { name: "Saleshandy", svg: <Badge bg="#0062FF" text="Saleshandy" /> },
-      { name: "Hunter", img: "https://cdn.simpleicons.org/hunterio/F26B22" },
+      { name: "Hunter", svg: <Badge bg="#F26B22" text="Hunter" /> },
       { name: "Snov.io", svg: <Badge bg="#F97316" text="Snov.io" /> },
       { name: "PhantomBuster", svg: <Badge bg="#7C3AED" text="Phantom" /> },
       {
@@ -102,7 +96,7 @@ const categories: { heading: string; tools: Tool[] }[] = [
   {
     heading: "Data & Scraping",
     tools: [
-      { name: "Apify", img: "https://cdn.simpleicons.org/apify/1BB44F" },
+      { name: "Apify", svg: <Badge bg="#1BB44F" text="Apify" /> },
       { name: "iScrape", svg: <Badge bg="#0EA5E9" text="iScrape" /> },
       { name: "SerpAPI", svg: <Badge bg="#22C55E" text="SerpAPI" /> },
     ],
@@ -110,7 +104,7 @@ const categories: { heading: string; tools: Tool[] }[] = [
   {
     heading: "AI & LLMs",
     tools: [
-      { name: "OpenAI", img: "https://cdn.simpleicons.org/openai/000000" },
+      { name: "OpenAI", svg: <Badge bg="#000000" text="OpenAI" /> },
       { name: "Claude", svg: <Badge bg="#D97757" text="Claude" /> },
       {
         name: "Gemini",
@@ -121,7 +115,7 @@ const categories: { heading: string; tools: Tool[] }[] = [
         img: "https://cdn.simpleicons.org/perplexity/1FB8CD",
       },
       { name: "Groq", svg: <Badge bg="#F55036" text="Groq" /> },
-      { name: "Mistral", img: "https://cdn.simpleicons.org/mistral/FF7000" },
+      { name: "Mistral", svg: <Badge bg="#FF7000" text="Mistral" /> },
       { name: "LangChain", svg: <Badge bg="#1C3C3C" text="LangChain" /> },
       { name: "LangGraph", svg: <Badge bg="#1C3C3C" text="LangGraph" /> },
     ],
@@ -135,10 +129,7 @@ const categories: { heading: string; tools: Tool[] }[] = [
         name: "ElevenLabs",
         img: "https://cdn.simpleicons.org/elevenlabs/000000",
       },
-      {
-        name: "Twilio Voice",
-        img: "https://cdn.simpleicons.org/twilio/F22F46",
-      },
+      { name: "Twilio Voice", svg: <Badge bg="#F22F46" text="Twilio" /> },
     ],
   },
   {
@@ -146,7 +137,7 @@ const categories: { heading: string; tools: Tool[] }[] = [
     tools: [
       { name: "WhatsApp", img: "https://cdn.simpleicons.org/whatsapp/25D366" },
       { name: "Telegram", img: "https://cdn.simpleicons.org/telegram/26A5E4" },
-      { name: "Slack", img: "https://cdn.simpleicons.org/slack/4A154B" },
+      { name: "Slack", svg: <Badge bg="#4A154B" text="Slack" /> },
       { name: "Discord", img: "https://cdn.simpleicons.org/discord/5865F2" },
     ],
   },
@@ -184,10 +175,7 @@ const categories: { heading: string; tools: Tool[] }[] = [
       { name: "ClickUp", img: "https://cdn.simpleicons.org/clickup/7B68EE" },
       { name: "Asana", img: "https://cdn.simpleicons.org/asana/F06A6A" },
       { name: "Trello", img: "https://cdn.simpleicons.org/trello/0052CC" },
-      {
-        name: "Monday.com",
-        img: "https://cdn.simpleicons.org/mondaydotcom/FF3750",
-      },
+      { name: "Monday.com", svg: <Badge bg="#FF3750" text="Monday" /> },
     ],
   },
   {
@@ -206,10 +194,7 @@ const categories: { heading: string; tools: Tool[] }[] = [
         name: "GTM",
         img: "https://cdn.simpleicons.org/googletagmanager/246FDB",
       },
-      {
-        name: "LinkedIn Ads",
-        img: "https://cdn.simpleicons.org/linkedin/0A66C2",
-      },
+      { name: "LinkedIn Ads", svg: <Badge bg="#0A66C2" text="in" /> },
     ],
   },
 ];
