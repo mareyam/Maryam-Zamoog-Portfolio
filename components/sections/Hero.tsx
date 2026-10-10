@@ -11,9 +11,6 @@ export default function Hero() {
           ZAMOOG
         </h1>
 
-        <p className="mt-3 self-start border border-black px-3 py-2 text-sm sm:text-base text-black">
-          (ours, hamara)
-        </p>
       </div>
 
       {/* Spacer */}
