@@ -5,7 +5,10 @@ import { useState, useRef, useEffect } from "react";
 type Message = {
   role: "user" | "bot";
   text: string;
+  isError?: boolean;
 };
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/maryam-naveed-zamoog-n8n";
 
 const WEBHOOK_URL =
   "https://n8n.softxlogic.com/webhook/9d5fe05a-52f5-4484-9267-95a7f88b6d67";
@@ -78,7 +81,8 @@ export default function Chatbot() {
         ...prev,
         {
           role: "bot",
-          text: "Something went wrong. Please try again.",
+          text: "Please contact me on maryam@zamoog.com or my LinkedIn.",
+          isError: true,
         },
       ]);
     } finally {
@@ -125,7 +129,29 @@ export default function Chatbot() {
                       : "bg-white text-black"
                   }`}
                 >
-                  {msg.text}
+                  {msg.isError ? (
+                    <>
+                      Please contact me on{" "}
+                      <a
+                        href="mailto:maryam@zamoog.com"
+                        className="underline hover:no-underline"
+                      >
+                        maryam@zamoog.com
+                      </a>{" "}
+                      or my{" "}
+                      <a
+                        href={LINKEDIN_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:no-underline"
+                      >
+                        LinkedIn
+                      </a>
+                      .
+                    </>
+                  ) : (
+                    msg.text
+                  )}
                 </div>
               </div>
             ))}
