@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-const skills = ["N8N", "Make.com", "UiPath", "Python FastAPI", "JavaScript/SwiftUI/NextJS"];
-const languages = ["English (Bilingual)", "Urdu/Hindi (Bilingual)"];
 const tools = [
+  "UiPath",
+  "Python FastAPI",
+  "JavaScript/SwiftUI/NextJS",
   "Clay",
   "GHL",
   "HubSpot",
@@ -56,7 +57,7 @@ const tools = [
 const experience = [
   {
     role: "Freelance",
-    title: "n8n Automation Developer and Software Engineer",
+    title: "Automation and GHL CRM Developer and Software Engineer",
     period: "2024 - PRESENT",
     bullets: [
       "Portfolio at: zamoog.com",
@@ -144,28 +145,6 @@ export default function Resume() {
 
           <div>
             <h2 className="mb-2 border-b border-gray-300 pb-1 text-xs font-bold tracking-widest text-gray-700">
-              SKILLS
-            </h2>
-            <ul className="space-y-1 text-gray-700">
-              {skills.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="mb-2 border-b border-gray-300 pb-1 text-xs font-bold tracking-widest text-gray-700">
-              LANGUAGES
-            </h2>
-            <ul className="space-y-1 text-gray-700">
-              {languages.map((l) => (
-                <li key={l}>{l}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="mb-2 border-b border-gray-300 pb-1 text-xs font-bold tracking-widest text-gray-700">
               TOOLS
             </h2>
             <p className="text-gray-700">{tools.join(", ")}</p>
@@ -182,16 +161,8 @@ export default function Resume() {
             <div className="ml-11 mt-2 space-y-2 border-t border-gray-200 pt-3 text-sm leading-relaxed text-gray-700">
               <p>
                 An AI Automation Engineer with 3 years of industry experience with JavaScript
-                and 1.5 years experience working with GoHighLevel, n8n, AI Agents, APIs, and
+                and 1.5 years experience working with GoHighLevel, Automations, AI Agents, APIs, and
                 CRM automation.
-              </p>
-              <p>
-                Experienced in building end-to-end automation systems for lead generation,
-                sales, customer support, and business operations.
-              </p>
-              <p>
-                Skilled in integrating platforms like OpenAI, Vapi, Retell, Twilio, HubSpot,
-                Salesforce, Stripe, and third-party APIs.
               </p>
             </div>
           </div>
