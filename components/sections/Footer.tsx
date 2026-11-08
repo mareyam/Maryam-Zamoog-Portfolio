@@ -32,6 +32,16 @@ export default function Footer() {
             ))}
           </nav>
 
+          {/* Legal */}
+          <nav className="flex flex-col gap-1">
+            <a href="/privacy" className="transition-colors hover:text-white">
+              Privacy Policy
+            </a>
+            <a href="/terms" className="transition-colors hover:text-white">
+              Terms of Service
+            </a>
+          </nav>
+
           {/* Copyright */}
           <div>
             <span>All rights reserved.</span>
