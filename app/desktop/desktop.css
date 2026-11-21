@@ -1,0 +1,155 @@
+/* ---- Retro pixel cursors (images are generated in lib/desktop/cursors.ts) ---- */
+.retro-os { cursor: var(--cursor-arrow, default); }
+.retro-os button:not(:disabled),
+.retro-os a,
+.retro-os [role="menuitem"],
+.retro-os [role="tab"],
+.retro-os [data-drag] { cursor: var(--cursor-hand, pointer); }
+.retro-os input:not([type="checkbox"]):not([type="radio"]),
+.retro-os textarea { cursor: var(--cursor-text, text); }
+.retro-os [data-cursor="ew"] { cursor: var(--cursor-ew, ew-resize); }
+.retro-os [data-cursor="ns"] { cursor: var(--cursor-ns, ns-resize); }
+.retro-os [data-cursor="nwse"] { cursor: var(--cursor-nwse, nwse-resize); }
+.retro-os [data-cursor="nesw"] { cursor: var(--cursor-nesw, nesw-resize); }
+
+/* ---- CRT effects: opacity-only animations, so they stay on the compositor ---- */
+/* Mirrors the reference's crt-jit (0.23s stepped) and crt-breath (2.7s stepped) */
+@keyframes crt-jit {
+  0% { opacity: 0.6; } 17% { opacity: 0.15; } 33% { opacity: 0.9; }
+  50% { opacity: 0.3; } 67% { opacity: 1; } 83% { opacity: 0.45; } 100% { opacity: 0.7; }
+}
+@keyframes crt-breath { 0% { opacity: 0.35; } 100% { opacity: 1; } }
+@keyframes icon-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.crt-jit { animation: crt-jit 0.23s steps(1) infinite; }
+.crt-breath { animation: crt-breath 2.7s steps(10) infinite alternate; }
+.icon-blink { animation: icon-blink 0.18s steps(1) 2; }
+
+@media (prefers-reduced-motion: reduce), (hover: none) {
+  /* No flicker on reduced-motion or touch devices */
+  .crt-jit, .crt-breath, .icon-blink { animation: none; }
+}
+
+/* ---- Responsive layout variables (desktop values are the original sizes) ---- */
+.retro-os { --bar-h: 32px; --dock-h: 64px; -webkit-tap-highlight-color: transparent; }
+@media (pointer: coarse) { .retro-os { --bar-h: 40px; } }
+
+/* ---- Touch behaviour ---- */
+.retro-os button, .retro-os a, .retro-os [role="tab"], .retro-os input, .retro-os textarea { touch-action: manipulation; }
+.retro-os [data-icon], .retro-os header { -webkit-touch-callout: none; }
+/* No pull-to-refresh or rubber-banding behind the "computer" */
+html:has(.retro-os), body:has(.retro-os) { overscroll-behavior: none; }
+
+/* ---- Themed scrollbars (the site-wide white track clashes with the dark screen) ---- */
+.retro-os * { scrollbar-width: thin; scrollbar-color: #74582b #020b14; }
+
+/* =====================================================================
+   Scene: monitor + room.  Below the "wide" breakpoint the screen simply fills the
+   window (the compact layout); on wide landscape screens a beige CRT sits in a room.
+   ===================================================================== */
+.scene { position: fixed; inset: 0; background: #1a1a1c; overflow: hidden; }
+.monitor { position: absolute; inset: 8px; }
+@media (min-width: 640px) { .monitor { inset: 12px; } }
+.glass {
+  position: absolute; inset: 0; overflow: hidden; background: #020b14;
+  border-radius: 28px;
+  box-shadow: inset 0 0 0 2px rgba(255,182,72,0.18), inset 0 0 80px rgba(0,0,0,0.9), 0 0 40px rgba(255,182,72,0.08);
+  container: glass / size;
+}
+@media (min-width: 640px) { .glass { border-radius: 40px; } }
+.room, .housing, .zoom-controls, .glass-reflection { display: none; }
+
+@media (min-width: 1000px) and (min-aspect-ratio: 5/4) {
+  .scene { --gw: min(78vw, calc(88dvh * 1.42)); --gh: calc(var(--gw) / 1.42); background: #2a1f15; }
+  .monitor {
+    inset: auto; left: 50%; top: 50%;
+    width: var(--gw); height: var(--gh);
+    margin-left: calc(var(--gw) / -2); margin-top: calc(var(--gh) / -2);
+    transition: width .7s cubic-bezier(.2,.7,.2,1), height .7s cubic-bezier(.2,.7,.2,1), margin .7s cubic-bezier(.2,.7,.2,1);
+  }
+  .scene[data-zoom="screen"] .monitor {
+    width: calc(100vw - 24px); height: calc(100dvh - 24px);
+    margin-left: calc((100vw - 24px) / -2); margin-top: calc((100dvh - 24px) / -2);
+  }
+  .glass { border-radius: calc(var(--gw) * 0.034); box-shadow: 0 0 0 .35vw #0d0b08, 0 0 0 .6vw rgba(120,104,74,.9), inset 0 0 0 2px rgba(255,182,72,0.14), inset 0 0 90px rgba(0,0,0,0.9); transition: border-radius .7s; }
+  .scene[data-zoom="screen"] .glass { border-radius: 40px; box-shadow: inset 0 0 0 2px rgba(255,182,72,0.18), inset 0 0 80px rgba(0,0,0,0.9); }
+
+  /* --- room --- */
+  .room { display: block; position: absolute; inset: 0; transition: opacity .7s, transform .7s; }
+  .scene[data-zoom="screen"] .room { opacity: 0; transform: scale(1.25); }
+  .room-wall { position: absolute; inset: 0; background:
+      radial-gradient(ellipse 60% 70% at 38% 46%, #c9a77a 0%, #a98763 42%, #6a4b31 78%, #3a2818 100%); }
+  .room-props { position: absolute; inset: 0; width: 100%; height: 100%; filter: blur(1.6px); opacity: .9; }
+  .room-blinds { position: absolute; top: 0; right: 0; bottom: 0; width: 15vw;
+      background:
+        linear-gradient(90deg, rgba(42,31,21,.75), rgba(255,214,150,.0) 35%),
+        repeating-linear-gradient(180deg, #f2d6a2 0 9px, #c99a5c 9px 12px, #7e5630 12px 14px);
+      box-shadow: -3vw 0 8vw rgba(255,200,120,.35); filter: blur(.6px); }
+  .room-light { position: absolute; inset: 0; pointer-events: none;
+      background: repeating-linear-gradient(100deg, rgba(255,224,176,0) 0 4vw, rgba(255,224,176,.11) 4vw 7vw);
+      -webkit-mask-image: linear-gradient(90deg, transparent 25%, #000 100%); mask-image: linear-gradient(90deg, transparent 25%, #000 100%); }
+  .room-desk { position: absolute; left: 0; right: 0; bottom: 0; height: 7%; background: linear-gradient(180deg, #4a3220, #22160c); }
+  .room-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 48%, transparent 45%, rgba(10,6,2,.7) 100%); }
+
+  /* --- beige monitor housing --- */
+  .housing {
+    display: block; position: absolute; inset: -3.1% -2.5%; overflow: hidden;
+    border-radius: 2.4vw / 2.8vw;
+    background: linear-gradient(180deg, #f0e7d3 0%, #ded2b7 16%, #cfc1a1 58%, #b8a982 100%);
+    box-shadow: 0 2.2vw 6vw rgba(0,0,0,.65), 0 0 0 .14vw rgba(60,45,25,.55),
+                inset 0 .22vw .3vw rgba(255,255,255,.7), inset 0 -.5vw 1vw rgba(90,70,35,.45);
+    transition: opacity .6s;
+  }
+  .housing::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 9%; background: linear-gradient(180deg, rgba(255,255,255,.6), transparent); }
+  .housing::after { content: ""; position: absolute; inset: 0;
+      background: repeating-linear-gradient(100deg, rgba(255,226,170,0) 0 4vw, rgba(255,226,170,.22) 4vw 7vw);
+      -webkit-mask-image: linear-gradient(90deg, transparent 30%, #000 100%); mask-image: linear-gradient(90deg, transparent 30%, #000 100%); }
+  .scene[data-zoom="screen"] .housing { opacity: 0; }
+  .housing-led { position: absolute; right: 8%; bottom: 1.1%; width: .55vw; height: .55vw; border-radius: 50%; background: #72e48c; box-shadow: 0 0 .7vw #72e48c; z-index: 1; }
+  .housing-knob { position: absolute; right: 4.6%; bottom: .9%; width: 1.1vw; height: 1.1vw; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #4a443a, #17130e); box-shadow: 0 0 .15vw rgba(0,0,0,.8); z-index: 1; }
+
+  /* --- window-blind reflection across the glass --- */
+  .glass-reflection { display: block; position: absolute; inset: 0; pointer-events: none; z-index: 5; transition: opacity .7s;
+      background: repeating-linear-gradient(100deg, rgba(255,230,190,0) 0 4vw, rgba(255,230,190,.035) 4vw 5.5vw);
+      -webkit-mask-image: linear-gradient(90deg, transparent 68%, #000 100%); mask-image: linear-gradient(90deg, transparent 68%, #000 100%); }
+  .scene[data-zoom="screen"] .glass-reflection { opacity: 0; }
+
+  /* --- zoom buttons (bottom-left) --- */
+  .zoom-controls { display: flex; flex-direction: column; gap: 2px; position: fixed; left: 24px; bottom: 24px; z-index: 20;
+      padding: 6px; border-radius: 12px; background: rgba(20,20,22,.78); border: 1px solid rgba(255,182,72,.25); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .monitor, .room, .housing, .glass, .glass-reflection { transition: none !important; }
+}
+
+/* =====================================================================
+   Wide screen layout *inside* the glass. Uses container units (cqw/cqh), so it scales with
+   the monitor. Narrower or portrait screens keep the compact centered layout.
+   ===================================================================== */
+.home-hint, .dock-ticker { display: none; }
+@container glass (min-width: 760px) and (min-aspect-ratio: 5/4) {
+  .home-scroller { overflow: hidden; padding: 0; }
+  .home-icons {
+    position: absolute; left: 6.2cqw; top: 10.2cqh; margin: 0; padding: 0; max-width: none;
+    display: grid; grid-template-columns: repeat(2, max(10cqw, 100px)); grid-auto-rows: max(10cqw, 96px); gap: 0; justify-items: center; align-items: start;
+  }
+  .home-icons [data-icon] svg { width: clamp(48px, 5.4cqw, 92px); height: clamp(48px, 5.4cqw, 92px); }
+  .home-icons [data-icon] span { font-size: clamp(12px, 1.25cqw, 17px); }
+  .home-tagline {
+    position: absolute; right: 8.8cqw; top: 49cqh; width: 27cqw; max-width: none; margin: 0; padding: 0;
+    text-align: right; font-size: clamp(13px, 1.7cqw, 26px); line-height: 1.5;
+  }
+  .home-name {
+    position: absolute; right: 8.8cqw; bottom: calc(var(--dock-h) + 7cqh); margin: 0; padding: 0;
+    text-align: right; white-space: nowrap; font-size: clamp(36px, 6.6cqw, 130px);
+  }
+  .home-hint {
+    display: block; position: absolute; left: 6.5cqw; bottom: calc(var(--dock-h) + 1.6cqh); margin: 0;
+    font-family: var(--font-chivo), monospace; font-size: clamp(11px, 1.15cqw, 16px); color: #ffb648; opacity: .55;
+  }
+  .os-dock { padding-left: 6.2cqw; padding-right: 8.8cqw; }
+  .dock-ticker {
+    display: block; flex: 1 1 0; min-width: 0; margin: 0 2cqw; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    font-size: clamp(11px, 1.15cqw, 16px); opacity: .7;
+  }
+}
