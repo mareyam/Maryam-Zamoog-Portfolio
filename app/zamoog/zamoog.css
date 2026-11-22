@@ -172,4 +172,4 @@ html:has(.zm) { background: #f8f8f5; scroll-behavior: auto; }
 .zm-section .zm-formcard :is(p, li, label, figcaption, a):not(.zm-btn):not(.zm-btn *) { text-shadow: none; }
 
 /* Hero eyebrow: always highlighted in the accent green */
-.zm-eyebrow-hl { display: inline-block; background: var(--zm-accent); color: var(--zm-ink); padding: .1rem .35rem; }
+.zm-eyebrow-hl { display: inline-block; background: #bed86a; color: var(--zm-ink); padding: .1rem .35rem; }
