@@ -38,7 +38,7 @@ export default function Nav() {
         <nav aria-label="Primary" className="flex items-center gap-8">
           <ul className="hidden items-center gap-8 text-[0.95rem] lg:flex">
             {NAV_LINKS.map((l) => (
-              <li key={l.href}><a href={`/${l.href}`} className="hover:underline hover:decoration-[var(--zm-accent)] hover:decoration-2 hover:underline-offset-4">{l.label}</a></li>
+              <li key={l.href}><a href={`/${l.href}`} className="text-[var(--zm-purple)] hover:underline hover:decoration-[var(--zm-accent)] hover:decoration-2 hover:underline-offset-4">{l.label}</a></li>
             ))}
           </ul>
           <button ref={menuBtn} type="button" className="zm-moment-btn" aria-expanded={open} aria-controls="zm-menu" onClick={() => setOpen(true)}>

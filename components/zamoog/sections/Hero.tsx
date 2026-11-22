@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section id="hero" aria-labelledby="hero-title" className="zm-section zm-full flex items-end pb-[11svh] pt-28">
       <div className="zm-wrap w-full">
-        <p className="zm-eyebrow mb-6" data-rv>
+        <p className="zm-eyebrow zm-eyebrow-hl mb-6" data-rv>
           Zamoog - for non-tech people
         </p>
         <h1 id="hero-title" className="zm-head zm-h1 max-w-[13ch]" data-words>
@@ -19,9 +19,6 @@ export default function Hero() {
             <Link className="zm-btn zm-btn-ghost" href="/see-what-works">
               See what works for you
             </Link>
-            <a className="zm-btn zm-btn-ghost" href="#contact">
-              Let&rsquo;s Talk
-            </a>
           </div>
         </div>
       </div>
