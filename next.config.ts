@@ -1,12 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // The /zamoog story site is the home page. The URL stays "/"; /zamoog still works too.
+  // zamoog.com and www.zamoog.com keep "/" as the /zamoog story (URL stays "/").
+  // maryam.zamoog.com "/" serves /desktop the same way. The host rule is first:
+  // a beforeFiles rewrite that resolves to a real page stops the chain.
   async rewrites() {
-    return { beforeFiles: [
+    return {
+      beforeFiles: [
+        {
+          source: "/",
+          has: [{ type: "host", value: "maryam\\.zamoog\\.com" }],
+          destination: "/desktop",
+        },
         { source: "/", destination: "/zamoog" },
         { source: "/see-what-works", destination: "/zamoog/see-what-works" },
-      ], afterFiles: [], fallback: [] };
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
   images: {
     remotePatterns: [
