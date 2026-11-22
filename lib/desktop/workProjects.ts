@@ -47,27 +47,18 @@ export const SUMMARY_PROJECTS: SummaryProject[] = [
   },
   {
     id: "ghl-02", group: "GoHighLevel", number: "02",
-    title: "n8n Booking, Callback, and WhatsApp Request Flows for a Vapi + GoHighLevel System",
+    title: "Vapi + GoHighLevel Voice System: n8n Booking and Callback Flows, Call Queue, Retries, and Live Calendar Booking",
     bullets: [
       "This is the n8n side of a voice-calling system (Loom description: “for zabeel”) that works with GoHighLevel tags and calendars.",
       "After a consultation is booked, a booking flow waits three minutes, then sends a confirmation message (the delay was added because calendar fields were not updating during earlier tests).",
       "A “book meeting” tool checks three calendars in real time — including Dubai, Shahjahan, and an online calendar — and either books the slot or tells the caller it is not available.",
       "If the caller asks for WhatsApp, the contact is tagged “WhatsApp requested” and the linked n8n/GoHighLevel workflow runs.",
-      "A separate callback path takes a date and schedules a callback; the same video also covers the call-queue and retry logic described under project 03.",
-    ],
-    note: "Projects 02 and 03 share one Loom.",
-  },
-  {
-    id: "ghl-03", group: "GoHighLevel", number: "03",
-    title: "Vapi + GoHighLevel Call Queue, Retry Logic, and Live Calendar Booking",
-    bullets: [
+      "A separate callback path takes a date and schedules a callback.",
       "A standing queue flow watches GoHighLevel for tags such as first call, callback, and follow-up, then places the Vapi call for those contacts.",
       "When Vapi returns a 503 error, the older system left the contact on “no action” and never called again; the new flow emails a log of failed contacts and re-applies the first-call tag so they are queued again.",
       "Failed 503 calls are retried because the call never reached the person, so the retry is not treated as spam (this was tested).",
       "If a call lasts less than 9 seconds, the contact goes to follow-up; if it lasts longer, the conversation is processed and the contact is routed using existing tags.",
-      "Appointment booking, WhatsApp-request tagging, and callback scheduling are part of the same system (see project 02); confirmation messages go out after a three-minute wait.",
     ],
-    note: "Same Loom as project 02.",
   },
   {
     id: "ghl-05", group: "GoHighLevel", number: "05",

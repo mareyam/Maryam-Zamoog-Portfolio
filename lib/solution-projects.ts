@@ -9,7 +9,7 @@ export interface SolutionProject {
 
 const L = (id: string) => `https://www.loom.com/share/${id}`;
 
-const P = {
+export const P = {
   clinicVoice: { title: "Voice AI & multi-channel nurture for a clinic", point: "A voice and chat AI answers calls and texts, and books appointments straight into the calendar. Leads from WhatsApp, landing pages and Meta forms are followed up automatically.", href: L("42eee2302a6e49039e74959739a9c63f"), kind: "Video" },
   a2p: { title: "A2P SMS registration & compliance", point: "SMS registration and opt-in set up for three accounts, so texts are delivered and compliant.", href: L("c7c87c159f3d49a9a8beba2e077ac657"), kind: "Video" },
   vapiQueue: { title: "Call queue, retries & live calendar booking", point: "Calls queue from CRM tags, failed calls retry automatically, and bookings are checked against live calendars.", href: L("141f2f6d4b124ebe849e3c23b82824f0"), kind: "Video" },

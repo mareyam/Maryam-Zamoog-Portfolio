@@ -2,6 +2,7 @@
 import { useMemo, useRef, useState } from "react";
 import { PROJECTS, type Project } from "@/lib/projects";
 import { FDE_GROUP, SUMMARY_PROJECTS, WORK_GROUPS, type SummaryProject } from "@/lib/desktop/workProjects";
+import { LOOM_BY_ID } from "@/lib/desktop/workLooms";
 import PixelIcon from "../icons/PixelIcon";
 import { AppShell, Bullets, Crumbs, Heading, RetroButton, Section, Tag, TempNote, ViewSwitch } from "./ui";
 
@@ -39,7 +40,7 @@ function SourceNote({ children }: { children: React.ReactNode }) {
 export default function WorkApp() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [filter, setFilter] = useState("All");
-  const [query, setQuery] = useState("");
+  const query = "";
   const root = useRef<HTMLDivElement>(null);
 
   const shown = useMemo(() => {
@@ -76,8 +77,7 @@ export default function WorkApp() {
         </span>
         <span className="line-clamp-3 text-[15px] font-bold leading-snug">{i.title}</span>
         <span className="mt-auto flex flex-wrap gap-1.5 pt-1">
-          {i.kind === "summary" && i.s.number && <Tag>#{i.s.number}</Tag>}
-          <Tag>{i.kind === "summary" ? `${i.s.bullets.length} points` : i.p.category}</Tag>
+          {i.kind !== "summary" && <Tag>{i.p.category}</Tag>}
         </span>
       </button>
     </li>
@@ -91,15 +91,6 @@ export default function WorkApp() {
             <div>
               <Crumbs items={[{ label: filter === "All" ? "C:\\WORK" : `C:\\WORK\\${filter}` }]} />
               <div className="p-4">
-                <label htmlFor="work-search" className="sr-only">Search projects</label>
-                <input
-                  id="work-search"
-                  type="search"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="search projects (tool, client, keyword)..."
-                  className="mb-3 w-full border border-[#ffb648]/60 bg-transparent px-2 py-1 pointer-coarse:py-2 pointer-coarse:text-base placeholder:text-[#ffb648]/40 focus:border-[#ffb648] focus:outline-none"
-                />
                 <div role="group" aria-label="Filter by category" className="mb-4 flex flex-wrap gap-2">
                   {["All", ...GROUPS].map((g) => (
                     <RetroButton key={g} active={filter === g} onClick={() => setFilter(g)}>
@@ -159,8 +150,12 @@ export default function WorkApp() {
                   <>
                     <div className="mt-2 flex flex-wrap gap-2">
                       <Tag>{open.group}</Tag>
-                      {open.s.number && <Tag>#{open.s.number}</Tag>}
                     </div>
+                    {LOOM_BY_ID[open.id] && (
+                      <a href={LOOM_BY_ID[open.id]} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block border border-[#ffb648] bg-[#ffb648] px-3 py-1 font-bold text-[#020b14] hover:bg-transparent hover:text-[#ffb648]">
+                        &#9654; Watch the Loom
+                      </a>
+                    )}
                     <div className="mt-4"><Bullets items={open.s.bullets} /></div>
                     {open.s.note && <div className="mt-4"><SourceNote>{open.s.note}</SourceNote></div>}
                   </>
