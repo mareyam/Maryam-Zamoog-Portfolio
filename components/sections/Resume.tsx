@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const tools = [
+export const tools = [
   "UiPath",
   "Python FastAPI",
   "JavaScript/SwiftUI/NextJS",
@@ -54,7 +54,7 @@ const tools = [
   "and related tools",
 ];
 
-const experience = [
+export const experience = [
   {
     role: "Freelance",
     title: "Automation and GHL CRM Developer and Software Engineer",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 type Message = {
   role: "user" | "bot";
@@ -14,6 +15,7 @@ const WEBHOOK_URL =
   "https://n8n.softxlogic.com/webhook/9d5fe05a-52f5-4484-9267-95a7f88b6d67";
 
 export default function Chatbot() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { role: "bot", text: "Hi! How can I help you today?" },
@@ -93,6 +95,9 @@ export default function Chatbot() {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") sendMessage();
   };
+
+  // The retro desktop is its own full-screen experience.
+  if (pathname === "/" || pathname === "/see-what-works" || pathname?.startsWith("/desktop") || pathname?.startsWith("/zamoog")) return null;
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">

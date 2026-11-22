@@ -35,3 +35,39 @@ body {
 .animate-text-pulse {
   animation: textPulse 2.5s ease-in-out infinite;
 }
+
+/* ---------- /maryam editorial theme ---------- */
+.maryam-theme {
+  --aubergine: #2a1322;
+  --plum: #5c2a4d;
+  --lilac: #cdb3cc;
+  --lilac-soft: #efe4ef;
+  --cream: #f7f0e4;
+  --offwhite: #fbf7f0;
+  --ink: #241019;
+  background: var(--offwhite);
+  color: var(--ink);
+}
+
+.maryam-theme ::selection {
+  background-color: var(--aubergine);
+  color: var(--cream);
+}
+
+.maryam-serif {
+  font-family: var(--font-maryam-serif), Georgia, "Times New Roman", serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .maryam-theme * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.maryam-theme[data-motion="off"] * {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}

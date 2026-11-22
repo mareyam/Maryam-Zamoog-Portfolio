@@ -1,0 +1,330 @@
+<title>Zamoog Visual Blueprint</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* layout: vertical stack of recreated sections, each labeled, on a light studio-grey canvas */
+:root{
+  --canvas:#eceae7; --panel:#fff; --ink:#1c1210;
+  --bg:#FBF6F3; --fg:#2A1A20; --fg-soft:rgba(42,26,32,.75);
+  --clay:#A8505E; --dark:#3A2029;
+  --rose1:#D69AA2; --rose2:#B76E79; --rose3:#9A4F5B;
+  --line:#e7dfda; --label:#8a7d77;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --canvas:#141210; --panel:#1b1816; --ink:#f2ece9; --label:#a89a93; }
+}
+:root[data-theme="dark"]{ --canvas:#141210; --panel:#1b1816; --ink:#f2ece9; --label:#a89a93; }
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--canvas); color:var(--ink);
+  font-family:-apple-system,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding-block:40px;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+}
+.wrap{max-width:860px;margin:0 auto}
+.intro{margin-bottom:36px}
+.intro h1{font-size:22px;margin:0 0 6px}
+.intro p{color:var(--label);font-size:14px;line-height:1.6;margin:0 0 14px;max-width:62ch}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.sw{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--label);font-family:ui-monospace,monospace}
+.sw i{width:16px;height:16px;border-radius:4px;display:block;border:1px solid rgba(0,0,0,.1)}
+
+.section-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--label);margin:0 0 10px 2px;font-family:ui-monospace,monospace;display:flex;align-items:center;gap:8px}
+.pill{font-family:-apple-system,sans-serif;letter-spacing:0;text-transform:none;font-size:11px;font-weight:600;padding:2px 9px;border-radius:999px}
+.pill-before{background:#e7dfda;color:#6b5f58}
+.pill-after{background:#dff3e6;color:#1f7a44}
+.note{font-size:12.5px;line-height:1.55;color:var(--ink);background:#fff7e0;border:1px solid #f0dfa0;border-radius:10px;padding:10px 14px;margin:0 0 14px;max-width:70ch}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .note{background:#2a2410;border-color:#4a3e18;color:#f2ece9}}
+:root[data-theme="dark"] .note{background:#2a2410;border-color:#4a3e18;color:#f2ece9}
+.panel{
+  background:var(--panel); border-radius:14px; overflow:hidden; margin-bottom:34px;
+  box-shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.05);
+}
+.screen{ background:var(--bg); color:var(--fg); padding:28px 26px; font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif; }
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:34px}
+.logo{display:flex;align-items:center;gap:7px;font-weight:700;font-size:16px;color:var(--fg)}
+.logo svg{width:16px;height:16px}
+.navlinks{display:flex;gap:22px;font-size:13px;color:var(--fg-soft)}
+.navcta{background:var(--dark);color:#fff;border-radius:999px;padding:9px 16px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.navlinks,.navcta{display:none}
+@media(min-width:620px){.navlinks,.navcta{display:flex}}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:center}
+@media(max-width:640px){.hero{grid-template-columns:1fr}}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:11.5px;color:var(--fg-soft);margin-bottom:16px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--clay)}
+.h1{font-size:34px;line-height:1.08;font-weight:600;margin:0 0 14px;letter-spacing:-0.01em}
+.h1 em{font-style:normal;font-weight:500;color:var(--clay)}
+.lede{font-size:14.5px;line-height:1.6;color:var(--fg-soft);max-width:46ch;margin:0 0 20px}
+.ctarow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.btn-primary{background:linear-gradient(135deg,var(--rose1),var(--rose2) 48%,var(--rose3));color:#fff;border-radius:999px;padding:12px 22px;font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--fg);border-radius:999px;padding:12px 20px;font-size:13.5px;font-weight:500}
+.checks{display:flex;flex-direction:column;gap:7px;font-size:12.5px;color:var(--fg-soft)}
+.checks span{color:var(--clay);margin-right:6px}
+
+/* PHONE */
+.phonewrap{position:relative;display:flex;justify-content:center}
+.phone{width:220px;background:#231319;border-radius:30px;padding:10px;position:relative;box-shadow:0 20px 40px rgba(60,20,30,.18)}
+.pscreen{background:#2c1a21;border-radius:22px;padding:10px;color:#fff;font-size:10px;min-height:300px;display:flex;flex-direction:column}
+.ptop{display:flex;justify-content:space-between;color:#cbb8bd;font-size:9px;padding:2px 4px 8px}
+.pmsgrow{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.pavatar{width:18px;height:18px;border-radius:50%;background:var(--rose2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700}
+.pname{font-size:9.5px;font-weight:600}
+.psub{font-size:7.5px;color:#cbb8bd}
+.bubble{background:#3a2029;border-radius:10px;padding:7px 9px;font-size:8.5px;line-height:1.4;margin-bottom:6px;max-width:92%}
+.bubble.mine{background:#4a2c35}
+.bubble.them{background:#20141a;align-self:flex-end;max-width:70%}
+.pfoot{margin-top:auto;background:#20141a;border-radius:10px;padding:8px 10px;font-size:8px;color:#998990}
+.tag{position:absolute;background:#fff;color:#2A1A20;border-radius:10px;padding:5px 8px;font-size:7.5px;box-shadow:0 6px 14px rgba(0,0,0,.18)}
+.tag .big{font-size:10px;font-weight:700;display:block}
+.tag.reply{top:40px;left:-14px}
+.tag.booked{bottom:70px;right:-18px;background:#2c1a21;color:#fff}
+
+/* LOGO STRIP */
+.logostrip{border-top:1px solid var(--line);margin-top:30px;padding-top:16px}
+.logostrip .lbl{font-size:10px;letter-spacing:.08em;color:var(--fg-soft);text-transform:uppercase;margin-bottom:10px}
+.logos{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:var(--fg-soft);font-weight:500}
+
+/* STATS */
+.statsgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:0}
+@media(max-width:640px){.statsgrid{grid-template-columns:repeat(2,1fr)}}
+.stat b{display:block;font-size:26px;color:var(--clay);font-weight:700}
+.stat span{font-size:11.5px;color:var(--fg-soft);line-height:1.4;display:block;margin-top:4px}
+
+/* LEAK GRID */
+.leak-head{max-width:46ch;margin-bottom:26px}
+.leak-eyebrow{font-size:11px;letter-spacing:.08em;color:var(--clay);text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.leak-h2{font-size:26px;font-weight:600;line-height:1.15;margin:0 0 10px}
+.leak-h2 b{color:var(--clay);font-weight:600}
+.leak-p{font-size:13.5px;color:var(--fg-soft);line-height:1.6;margin:0}
+.leakgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
+@media(max-width:640px){.leakgrid{grid-template-columns:1fr}}
+.leakitem .num{color:var(--clay);font-size:12px;font-weight:700;margin-bottom:6px}
+.leakitem h4{font-size:15px;margin:0 0 6px;font-weight:600}
+.leakitem p{font-size:13px;color:var(--fg-soft);line-height:1.55;margin:0}
+
+/* TABS */
+.tabbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{border-radius:999px;padding:9px 16px;font-size:12.5px;font-weight:500}
+.tab.active{background:var(--dark);color:#fff}
+.tab:not(.active){background:#fff;border:1px solid var(--line);color:var(--fg-soft)}
+
+/* FEATURE GRID */
+.featgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:640px){.featgrid{grid-template-columns:1fr}}
+.feat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.feat h5{font-size:13.5px;margin:0 0 6px;font-weight:600}
+.feat p{font-size:12px;color:var(--fg-soft);line-height:1.5;margin:0}
+
+/* FOOTER CTA */
+.footcta{background:var(--dark);border-radius:14px;padding:36px 28px;color:#fff;text-align:left}
+.footcta .lbl{font-size:11px;letter-spacing:.08em;color:var(--rose1);text-transform:uppercase;margin-bottom:10px}
+.footcta h3{font-size:24px;margin:0 0 10px;font-weight:600;max-width:20ch}
+.footcta p{font-size:13.5px;color:rgba(255,255,255,.75);max-width:48ch;line-height:1.6;margin:0 0 18px}
+
+/* typography note row */
+.spec{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--label);font-family:ui-monospace,monospace}
+.spec b{color:var(--ink)}
+</style>
+
+<div class="wrap">
+
+  <div class="intro">
+    <h1>Blueprint — aesthetic-clinics-demo.vercel.app (Zamoog)</h1>
+    <p>Exact visual recreation of the live site's sections, colors and type, pulled from the page's own computed styles. Scroll through each panel below as a reference for the real layout.</p>
+    <div class="swatches">
+      <div class="sw"><i style="background:#FBF6F3"></i>bg #FBF6F3</div>
+      <div class="sw"><i style="background:#2A1A20"></i>ink #2A1A20</div>
+      <div class="sw"><i style="background:#A8505E"></i>clay #A8505E</div>
+      <div class="sw"><i style="background:#3A2029"></i>dark #3A2029</div>
+      <div class="sw"><i style="background:linear-gradient(135deg,#D69AA2,#B76E79,#9A4F5B)"></i>rosegold gradient</div>
+    </div>
+    <div class="spec"><span><b>Display/body font:</b> -apple-system / SF Pro Display</span><span><b>H1:</b> 600, ~63px desktop</span><span><b>Buttons:</b> fully rounded, 48px tall</span></div>
+  </div>
+
+  <!-- HERO — BEFORE -->
+  <div class="section-label">01 · Hero <span class="pill pill-before">BEFORE</span></div>
+  <div class="panel">
+    <div class="screen">
+      <div class="nav">
+        <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>zamoog</div>
+        <div class="navlinks"><span>What we automate</span><span>See it work</span><span>How it works</span><span>Resources</span><span>FAQ</span></div>
+        <div class="navcta">Book a free audit</div>
+      </div>
+
+      <div class="hero">
+        <div>
+          <div class="eyebrow"><i></i>Front-desk automation for aesthetic clinics</div>
+          <h1 class="h1">Your front desk, <em>still open</em> at 11&nbsp;pm.</h1>
+          <p class="lede">We build the assistants and automations that answer every enquiry, book the consultation, remind the patient, and follow up with the ones who went quiet, so your team can stay in the treatment room.</p>
+          <div class="ctarow">
+            <div class="btn-primary">Book a free 30-min audit →</div>
+            <div class="btn-ghost">Watch it handle a patient</div>
+          </div>
+          <div class="checks">
+            <div><span>✓</span>Replies in seconds, day or night</div>
+            <div><span>✓</span>Works with your calendar &amp; CRM</div>
+            <div><span>✓</span>A human is always one tap away</div>
+          </div>
+        </div>
+
+        <div class="phonewrap">
+          <div class="phone">
+            <div class="pscreen">
+              <div class="ptop"><span>11:42</span><span>●●●</span></div>
+              <div class="pmsgrow"><div class="pavatar">S</div><div><div class="pname">Sofia M.</div><div class="psub">Instagram · 11:42 PM</div></div></div>
+              <div class="bubble them">Hi! How much is lip filler? And do you have anything free this week?</div>
+              <div class="bubble mine">Hi Sofia, thanks for reaching out. Lip filler starts from $320 depending on the amount, and Dr. Amara confirms everything at your consultation. I can offer Thursday 5:30 pm or Saturday 11:00 am. Which suits you?</div>
+              <div class="bubble them">Saturday works!</div>
+              <div class="bubble mine">Booked: Saturday 11:00 am with Dr. Amara. I've sent your confirmation and a short intake form. I'll remind you the day before.</div>
+              <div class="pfoot">Message…</div>
+            </div>
+            <div class="tag reply">REPLY TIME<span class="big">8 seconds</span></div>
+            <div class="tag booked">WHILE YOU SLEPT<span class="big">1 consult booked</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="logostrip">
+        <div class="lbl">Plugs into the tools you already use</div>
+        <div class="logos"><span>Google Calendar</span><span>WhatsApp</span><span>Instagram</span><span>GoHighLevel</span><span>n8n</span><span>Google Sheets</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO — AFTER (category-first) -->
+  <div class="section-label">01B · Hero <span class="pill pill-after">AFTER — category-first</span></div>
+  <div class="note">Headline now says the category in plain words first — "AI front-desk agent for aesthetic clinics" — so it reads correctly as a cold homepage, not only as the payoff of an ad. The old hook line moves down to the subhead, still doing its job.</div>
+  <div class="panel">
+    <div class="screen">
+      <div class="nav">
+        <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>zamoog</div>
+        <div class="navlinks"><span>What we automate</span><span>See it work</span><span>How it works</span><span>Resources</span><span>FAQ</span></div>
+        <div class="navcta">Book a free audit</div>
+      </div>
+
+      <div class="hero">
+        <div>
+          <div class="eyebrow"><i></i>For aesthetic &amp; medspa clinics</div>
+          <h1 class="h1">The <em>AI front-desk agent</em> for aesthetic clinics.</h1>
+          <p class="lede">Answers every enquiry, books the consultation, reminds the patient, and follows up with the ones who went quiet — so your front desk stays open at 11&nbsp;pm, even when your team isn't.</p>
+          <div class="ctarow">
+            <div class="btn-primary">Book a free 30-min audit →</div>
+            <div class="btn-ghost">Watch it handle a patient</div>
+          </div>
+          <div class="checks">
+            <div><span>✓</span>Replies in seconds, day or night</div>
+            <div><span>✓</span>Works with your calendar &amp; CRM</div>
+            <div><span>✓</span>A human is always one tap away</div>
+          </div>
+        </div>
+
+        <div class="phonewrap">
+          <div class="phone">
+            <div class="pscreen">
+              <div class="ptop"><span>11:42</span><span>●●●</span></div>
+              <div class="pmsgrow"><div class="pavatar">S</div><div><div class="pname">Sofia M.</div><div class="psub">Instagram · 11:42 PM</div></div></div>
+              <div class="bubble them">Hi! How much is lip filler? And do you have anything free this week?</div>
+              <div class="bubble mine">Hi Sofia, thanks for reaching out. Lip filler starts from $320 depending on the amount, and Dr. Amara confirms everything at your consultation. I can offer Thursday 5:30 pm or Saturday 11:00 am. Which suits you?</div>
+              <div class="bubble them">Saturday works!</div>
+              <div class="bubble mine">Booked: Saturday 11:00 am with Dr. Amara. I've sent your confirmation and a short intake form. I'll remind you the day before.</div>
+              <div class="pfoot">Message…</div>
+            </div>
+            <div class="tag reply">REPLY TIME<span class="big">8 seconds</span></div>
+            <div class="tag booked">WHILE YOU SLEPT<span class="big">1 consult booked</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="logostrip">
+        <div class="lbl">Plugs into the tools you already use</div>
+        <div class="logos"><span>Google Calendar</span><span>WhatsApp</span><span>Instagram</span><span>GoHighLevel</span><span>n8n</span><span>Google Sheets</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="section-label">02 · Stat row</div>
+  <div class="panel">
+    <div class="screen">
+      <div class="statsgrid">
+        <div class="stat"><b>24/7</b><span>coverage, including nights, weekends and holidays</span></div>
+        <div class="stat"><b>5</b><span>channels in one inbox: web, Instagram, WhatsApp, SMS, phone</span></div>
+        <div class="stat"><b>0</b><span>medical advice given. Clinical questions go to your clinician</span></div>
+        <div class="stat"><b>30 min</b><span>free audit to see exactly where bookings leak</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHERE BOOKINGS LEAK -->
+  <div class="section-label">03 · Where bookings leak</div>
+  <div class="panel">
+    <div class="screen">
+      <div class="leak-head">
+        <div class="leak-eyebrow">Where bookings leak</div>
+        <h2 class="leak-h2">Great clinics lose patients in the <b>gaps</b>, not in the treatment room.</h2>
+        <p class="leak-p">Your results bring people in. Slow replies, missed calls and no follow-up send them elsewhere, and none of it shows up on a report.</p>
+      </div>
+      <div class="leakgrid">
+        <div class="leakitem"><div class="num">01</div><h4>After-hours enquiries go cold</h4><p>Many patients message in the evening, when nobody is at the desk. Whoever replies first usually gets the booking.</p></div>
+        <div class="leakitem"><div class="num">02</div><h4>The phone rings during treatments</h4><p>Your team can't answer while they're with a patient. The caller rarely leaves a voicemail; they call the next clinic.</p></div>
+        <div class="leakitem"><div class="num">03</div><h4>Empty slots from no-shows</h4><p>A missed appointment is lost revenue and wasted prep, and chasing it is time nobody has.</p></div>
+        <div class="leakitem"><div class="num">04</div><h4>Interested patients quietly drift</h4><p>They asked about pricing, then life happened. Without a gentle follow-up, they never come back.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEE IT WORK (tabs) -->
+  <div class="section-label">04 · See it work — tabbed demo</div>
+  <div class="panel">
+    <div class="screen">
+      <div class="leak-eyebrow">See it work</div>
+      <h2 class="leak-h2" style="font-size:22px">Four moments from a normal week. Handled.</h2>
+      <p class="leak-p" style="margin-bottom:18px">Pick a scenario. These are example conversations for a fictional clinic, written in a warm tone that we tune to your own brand voice.</p>
+      <div class="tabbar">
+        <div class="tab active">After-hours DM</div>
+        <div class="tab">Missed call</div>
+        <div class="tab">Medical question</div>
+        <div class="tab">Reminders</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE AUTOMATE -->
+  <div class="section-label">05 · What we automate</div>
+  <div class="panel">
+    <div class="screen">
+      <div class="leak-eyebrow">What we automate</div>
+      <h2 class="leak-h2" style="font-size:22px;margin-bottom:18px">The admin your team shouldn't be doing by hand.</h2>
+      <div class="featgrid">
+        <div class="feat"><h5>Chat &amp; voice assistant</h5><p>One assistant trained on your treatments, pricing, aftercare and tone — answers on web, Instagram, WhatsApp, SMS and phone.</p></div>
+        <div class="feat"><h5>Follow-ups that feel personal</h5><p>Quiet enquiries get a gentle, well-timed nudge, stopping the moment they book or say no.</p></div>
+        <div class="feat"><h5>Reminders &amp; no-show recovery</h5><p>Confirm, reschedule or cancel by text. Freed slots offered to your waitlist automatically.</p></div>
+        <div class="feat"><h5>CRM &amp; admin on autopilot</h5><p>Contacts, intake forms, review requests and re-booking nudges, all logged without data entry.</p></div>
+        <div class="feat"><h5>A website that earns trust</h5><p>A lean, budget-friendly refresh so the first impression matches the care you give.</p></div>
+        <div class="feat"><h5>The quiet money</h5><p>Multi-day nudge sequences recover patients who asked but never booked.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="section-label">06 · Closing CTA</div>
+  <div class="panel">
+    <div class="screen" style="background:var(--bg);padding:26px">
+      <div class="footcta">
+        <div class="lbl">Let's talk</div>
+        <h3>Find out what your inbox is quietly costing you.</h3>
+        <p>Book a free 30-minute audit. We'll review how your clinic handles enquiries today and show you, with no obligation, what we'd automate first.</p>
+        <div class="ctarow" style="margin:0">
+          <div class="btn-primary">Pick a time →</div>
+          <div class="btn-ghost" style="border-color:rgba(255,255,255,.3);color:#fff">Send a message</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

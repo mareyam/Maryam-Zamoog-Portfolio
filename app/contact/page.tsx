@@ -31,9 +31,17 @@ export default function ContactPage() {
     setLoading(true);
     console.log("Form submitted:", formData);
 
+    // older webhook: fire-and-forget, never blocks or fails the submission
+    fetch("https://n8n.softxlogic.com/webhook/5b287c7b-5cb0-4608-9f3e-63b4d4daf922", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+      keepalive: true,
+    }).catch(() => {});
+
     try {
       const response = await fetch(
-        "https://n8n.softxlogic.com/webhook/5b287c7b-5cb0-4608-9f3e-63b4d4daf922",
+        "https://n8n.softxlogic.com/webhook/3ed996bd-857e-40b6-8520-22354521f319",
         {
           method: "POST",
           headers: {
@@ -220,7 +228,7 @@ export default function ContactPage() {
           <div className="bg-white max-w-md w-full p-12 border-2 border-black text-center">
             <h2 className="text-4xl font-black uppercase mb-4">Thank You!</h2>
             <p className="text-lg text-black/60 mb-8 leading-relaxed">
-              We'll reach out to you within 4 hours.
+              We&apos;ll reach out to you within 4 hours.
             </p>
             <button
               onClick={handleExplore}
@@ -265,7 +273,7 @@ export default function ContactPage() {
 
 //     try {
 //       const response = await fetch(
-//         "https://n8n.softxlogic.com/webhook/5b287c7b-5cb0-4608-9f3e-63b4d4daf922",
+//         "https://n8n.softxlogic.com/webhook/3ed996bd-857e-40b6-8520-22354521f319",
 //         {
 //           method: "POST",
 //           headers: {
@@ -569,4 +577,4 @@ export default function ContactPage() {
 // // }
 
 
-// // https://n8n.softxlogic.com/webhook/5b287c7b-5cb0-4608-9f3e-63b4d4daf922
+// // https://n8n.softxlogic.com/webhook/3ed996bd-857e-40b6-8520-22354521f319

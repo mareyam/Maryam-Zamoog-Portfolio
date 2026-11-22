@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/sections/Header";
 import { industries, toSlug } from "@/lib/data";
+import { solutionProjects } from "@/lib/solution-projects";
 
 export default async function IndustryPage({
   params,
@@ -25,7 +26,7 @@ export default async function IndustryPage({
 
       <main className="min-h-screen bg-white px-6 sm:px-10 py-20 ">
         <Link
-          href="/#about"
+          href="/see-what-works"
           className="mb-12 inline-flex items-center gap-2 text-lg text-black/50 hover:text-black transition-colors"
         >
           ← Back
@@ -82,6 +83,32 @@ export default async function IndustryPage({
                   </div>
                 ))}
               </div>
+
+              {(solutionProjects[slug] ?? []).length > 0 && (
+                <div className="mt-8 border-t border-black pt-6">
+                  <p className="text-sm uppercase tracking-wide text-black font-extrabold">
+                    See it in action
+                  </p>
+                  <ul className="mt-4 space-y-3">
+                    {solutionProjects[slug].map((p) => (
+                      <li key={p.href}>
+                        <a
+                          href={p.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group block border border-black p-4 transition-colors hover:bg-black hover:text-white"
+                        >
+                          <span className="flex items-start justify-between gap-4">
+                            <span className="font-bold">{p.title}</span>
+                            <span className="shrink-0 text-xs uppercase tracking-wide opacity-60">{p.kind} ↗</span>
+                          </span>
+                          <span className="mt-1 block text-sm leading-relaxed opacity-60">{p.point}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
 
